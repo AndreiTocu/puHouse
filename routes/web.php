@@ -1,5 +1,6 @@
 <?php
 
+use \App\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/Pubs', 'PubController@show');
+Route::get('/Pubs', 'PubController@lists');
+Route::get('/Pubs/{Pub}', 'PubController@showPub');
+Route::post('', 'ReviewController@store')->name("reviews.store")->middleware('auth');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
