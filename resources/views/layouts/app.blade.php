@@ -45,6 +45,11 @@
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">© 2020 puHouse</p>
+        <ul class="list-inline">
+        </ul>
+      </footer>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
