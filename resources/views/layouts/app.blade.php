@@ -20,6 +20,16 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+    <style media="screen">
+      body {
+        font-family:-apple-system,
+        font-size:1rem;
+        font-weight:400;
+        line-height:1.5;
+        color:#212529;
+        text-align:left;
+      }
+    </style>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
