@@ -28,6 +28,8 @@ Route::get('/UpdateUser', function () {
 }) ->name('UserProfileUpdate')->middleware('auth');
 
 Route::post('UpdateUser', 'UserController@update')->name('UserUpdate')->middleware('auth');
+Route::get('DeleteUser', 'UserController@delete')->name('UserDelete')->middleware('auth');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
