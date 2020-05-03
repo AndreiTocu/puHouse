@@ -18,10 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Pub Controller
 Route::get('/Pubs', 'PubController@lists');
 Route::get('/Pubs/{Pub}', 'PubController@showPub');
+// Review
 Route::post('', 'ReviewController@store')->name("reviews.store")->middleware('auth');
 
+//UserController
 Route::get('/User', 'UserController@show')->name('UserProfile')->middleware('auth');
 Route::get('/UpdateUser', function () {
   return view('Users.user-profile-update');
@@ -30,6 +33,7 @@ Route::get('/UpdateUser', function () {
 Route::post('UpdateUser', 'UserController@update')->name('UserUpdate')->middleware('auth');
 Route::get('DeleteUser', 'UserController@delete')->name('UserDelete')->middleware('auth');
 
+// Authentication
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
