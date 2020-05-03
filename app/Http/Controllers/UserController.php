@@ -37,4 +37,12 @@ class UserController extends Controller
           return redirect()->back();
       }
     }
+
+    public function delete() {
+      $user = Auth::user();
+
+      $user->delete();
+
+      return redirect()->back();
+    }
 }
