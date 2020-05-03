@@ -7,6 +7,10 @@
           <div class="card-header">
               <h1>
                 <strong>PUBS</strong>
+
+  <!-- Style for the Login feature -->
+  <link href="{{ asset('css/Login.css') }}" rel="stylesheet">
+
               </h1>
           </div>
           @foreach ($pubs as $pub)
