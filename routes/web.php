@@ -23,6 +23,9 @@ Route::get('/Pubs/{Pub}', 'PubController@showPub');
 Route::post('', 'ReviewController@store')->name("reviews.store")->middleware('auth');
 
 Route::get('/User', 'UserController@show')->name('UserProfile')->middleware('auth');
+Route::get('/UpdateUser', function () {
+  return view('Users.user-profile-update');
+}) ->name('UserProfileUpdate')->middleware('auth');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
