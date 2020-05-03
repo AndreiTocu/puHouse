@@ -26,6 +26,8 @@ Route::get('/User', 'UserController@show')->name('UserProfile')->middleware('aut
 Route::get('/UpdateUser', function () {
   return view('Users.user-profile-update');
 }) ->name('UserProfileUpdate')->middleware('auth');
+
+Route::post('UpdateUser', 'UserController@update')->name('UserUpdate')->middleware('auth');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
