@@ -20,7 +20,7 @@
                 <!-- Profile Picture -->
                 <div class="form-label-group text-center p-1">
                   <div class="card-body">
-                    <img class="rounded-circle" src="images-users/{{ Auth::user()->avatar }}"
+                    <img class="rounded-circle" src="{{URL::asset('/images-users/'.Auth::user()->avatar )}}"
                                                 alt="Generic placeholder image" width="140" height="140">
                   </div>
                 </div>

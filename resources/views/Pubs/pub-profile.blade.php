@@ -11,8 +11,7 @@
               <strong>Schedule</strong>
             </div>
             <div class="card-body text-info">
-              <h5 class="card-title">Open</h5>
-              <p class="card-text">{{ $pubProfile->OpeningTime }} - {{ $pubProfile->ClosingTime }}</p>
+              <h5 class="card-title">{{ $pubProfile->OpeningTime }} - {{ $pubProfile->ClosingTime }}</h5>
             </div>
           </div>
           <div class="card border-info mb-3" style="max-width: 18rem;">
@@ -20,8 +19,7 @@
               <strong>Adress</strong>
             </div>
             <div class="card-body text-info">
-              <h5 class="card-title">Come by !</h5>
-              <p class="card-text">{{ $pubProfile->Adress }}</p>
+              <h5 class="card-title">{{ $pubProfile->Adress }}</h5>
             </div>
           </div>
         </div>
@@ -110,15 +108,12 @@
 
       @foreach($pubReviews as $pubReview)
         <?php $pubReviewUser = \App\User::find($pubReview['user_id']) ?>
-        <div class="row my-3">
-          <div class="col-lg-2">
-            <div class="card-header text-center">
-                {{ $pubReviewUser->name }}
+        <div class="row">
+          <div class="col-lg-2 p-4">
+            <div class="img-thumbnail">
+              <img src="{{URL::asset('/images-users/'.$pubReviewUser->avatar)}}" class="card-img-top" alt="profile picture">
             </div>
-            <div class="card-body text-center">
-              <img  src="images-users/default-user/{{ $pubReviewUser->avatar }}"
-                                          alt="Generic placeholder image" width="150" height="150">
-            </div>
+            <h5 class="card-title text-center pt-3">{{ $pubReviewUser->name }}</h5>
           </div>
           <div class="col-lg-10">
               <div class="card-body text-dark">
@@ -132,6 +127,8 @@
                     {{ $pubReview['comment'] }}
                   </li>
                 </ul>
+                  @endif
+                </div>
               </div>
           </div>
         </div>

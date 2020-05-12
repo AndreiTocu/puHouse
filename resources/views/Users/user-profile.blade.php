@@ -13,7 +13,7 @@
               <div class="row">
 
                 <div class="col-lg-6 text-center">
-                  <img class="rounded-circle" src="images-users/{{ Auth::user()->avatar }}"
+                  <img class="rounded-circle" src="{{URL::asset('/images-users/'.Auth::user()->avatar )}}"
                                               alt="Generic placeholder image" width="150" height="150">
                   <h5 class="card-title text-center pt-3">{{ $user->name }} - Profile</h5>
                 </div>
@@ -41,9 +41,11 @@
               <!-- Row -->
               <hr>
               <div class="row pt-3">
-                <div class="col-lg-6 text-center">
-                  <a class="btn btn-primary" href="{{ route('UserProfileUpdate') }}">Edit Profile</a>
-                </div>
+                @if($user->google_id == '')
+                  <div class="col-lg-6 text-center">
+                    <a class="btn btn-primary" href="{{ route('UserProfileUpdate') }}">Edit Profile</a>
+                  </div>
+                @endif
                 <div class="col-lg-6 text-center">
                   <a class="btn btn-danger" href="{{ route('UserDelete') }}">Delete Profile</a>
                 </div>
