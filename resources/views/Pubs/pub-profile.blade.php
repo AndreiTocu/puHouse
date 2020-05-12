@@ -127,6 +127,11 @@
                     {{ $pubReview['comment'] }}
                   </li>
                 </ul>
+                <div class="pt-2 ml-auto">
+                  @if(Auth::check())
+                    @if($pubReviewUser->id == Auth::user()->id)
+                      <a class="btn btn-danger" href="/DeleteReview/{{ $pubReview['id'] }}" method ="PO">Delete Review</a>
+                    @endif
                   @endif
                 </div>
               </div>
