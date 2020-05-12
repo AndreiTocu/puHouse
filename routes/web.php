@@ -38,3 +38,6 @@ Route::get('DeleteUser', 'UserController@delete')->name('UserDelete')->middlewar
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+// Google Routes
+Route::get('/redirect', 'GoogleController@redirectToGoogle')->name('redirect');
+Route::get('/callback', 'GoogleController@handleGoogleCallback')->name('callback');
