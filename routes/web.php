@@ -23,6 +23,7 @@ Route::get('/Pubs', 'PubController@lists');
 Route::get('/Pubs/{Pub}', 'PubController@showPub');
 // Review
 Route::post('', 'ReviewController@store')->name("reviews.store")->middleware('auth');
+Route::get('DeleteReview/{reviewId}', 'ReviewController@delete')->middleware('auth');
 
 //UserController
 Route::get('/User', 'UserController@show')->name('UserProfile')->middleware('auth');
