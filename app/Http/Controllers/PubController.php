@@ -19,7 +19,7 @@ class PubController extends Controller
 
       $pubProfile = Pub::find($pubProfileId);
       $pubReviews = Review::all()->where('pub_id', '=', $pubProfileId) -> toArray();
-      
+
       return view('Pubs.pub-profile', compact('pubProfile', 'pubReviews'));
     }
 }
