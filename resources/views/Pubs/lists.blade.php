@@ -8,14 +8,20 @@
   <div class="container pt-5">
     <div class="row justify-content-center">
       <div class="col-md-12">
-        
+
         <div class="card card-signin my-5">
         @foreach ($pubs as $pub)
           <!-- Pub profile -->
             <div class="card-body">
-              <h1 class="my-4"> <strong> {{ $pub -> name }} </strong>
-                  <small></small>
-              </h1>
+              <div class="row m-auto">
+                <h1> <strong> {{ $pub -> name }} </strong></h1>
+                <div class="row ml-auto">
+                  <h5>
+                    {{ number_format(App\Review::where('pub_id', $pub->id)->count('rating'), 2) }} / 5.00
+                  </h5>
+                  <h5 class="pl-3">({{ App\Review::where('pub_id', $pub->id)->count() }})</h5>
+                </div>
+              </div>
               <div class="row p-4">
                 <div class="col-md-7">
                   <a href="/Pubs/{{ $pub->id }}">
