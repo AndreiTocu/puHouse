@@ -46,10 +46,12 @@
                     </a>
                 @endif
               </div>
+              <hr class="my-4">
+              <a href="{{ url('redirect') }}" class="btn btn-lg btn-google btn-block text-uppercase"><i class="fab fa-google mr-2"></i>Login with Google</a>
               </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 @endsection

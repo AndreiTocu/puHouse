@@ -51,6 +51,8 @@
                 </div>
 
                 <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">{{ __('Register') }}</button>
+                <hr class="my-4">
+                <a href="{{ url('redirect') }}" class="btn btn-lg btn-google btn-block text-uppercase"><i class="fab fa-google mr-2"></i>Sign up with Google</a>
                 </form>
             </div>
           </div>
